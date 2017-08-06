@@ -27,7 +27,7 @@
   when: (not ansible_os_family in ["CoreOS", "Container Linux by CoreOS"]) and (ansible_kernel|version_compare(docker_kernel_min_version, "<"))
   tags: facts
 
-# 禁用 docker 仓库处理，因为默认 kargo 会写入国外 docker 源，我已经自己设置了清华大学的镜像源
+# 禁用 docker 仓库处理，因为默认 kargo 会写入国外 docker 源
 
 # - name: ensure docker repository public key is installed
 #   action: "{{ docker_repo_key_info.pkg_key }}"
